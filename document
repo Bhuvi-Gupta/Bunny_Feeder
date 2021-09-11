@@ -1,0 +1,20 @@
+To overcome that, we will use the windowWidth and windowHeight variables instead of having a fixed screen size. This will automatically change the screen 
+size based on the size of the screen of the user. But here is the problem, this will only work for a computer screen. This won't work with the mobile 
+screen. For mobile screens, we need to use displayWidth and displayHeight, and we are going to use both of these. We will create a variable var isMobile, 
+which will store the type of mobile such as iphone, ipad or android. Then we will write a condition that will check the device we are currently on, if we 
+are on a mobile device it will use diplayWidth and displayHeight, if we are on a computer screen it will use windowWidth and windowHeight. Now, create two 
+variables as var canW and canH, these will store the width and height of the screen. 
+Note: We are adding 80 to the displayWidth in order to properly fit the screen width. As in some devices, game width is lesser than the screen width. If 
+you feel the game is stretched too much in the mobile, you can remove the 80 or reduce the value to an appropriate number.
+This will create a dynamic screen size. But it will not work. Because we need to add a very important line of code in our HTML file that will make the 
+webpage screen responsive.
+<meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=0.825,minimum-scale=0.8,width=device-width">
+This line will make sure that our game will adapt to any screen size. This will set the game width and height according to the screen size of the device 
+Now, we need to change a few more things, such as the position of the bunny and the ground. The current position we set for the bunny and ground is by 
+assuming a screen size of 500 x 700, but since we made it screen adaptive, it will place the bunny and the ground at different locations which may not 
+be desirable to us.
+Here we are placing the ground and bunny with respect to the new screen size. So the ground y-position will be canH which is the height of the screen. 
+And the y-position of the bunny will be canH-80. So the bunny will be placed on the ground. One more important change we need to make in the background 
+image, the background image is placed at 0,0 which is the top left corner of the canvas. But the image size will be fixed as 500 x 700px. This will not 
+cover our entire screen if the screen size is bigger. But we can specify the image size as well, and here we will do that using displayWidth and 
+displayHeight. We will also add some value in displayWidth to make sure the image covers the entire screen size.
